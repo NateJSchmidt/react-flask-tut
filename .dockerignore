@@ -1,0 +1,9 @@
+.git
+.idea
+.vscode
+**/*.md
+
+bundle
+**/venv
+**/node_modules
+**/src

@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+   flask_api_service:
+      image: flask_api_service:local
+      container_name: flask_api_service
+      init: true
+      restart: unless-stopped
+
+   nginx_server:
+      image: nginx_server:local
+      container_name: nginx_server
+      restart: always
+      ports:
+         - 80:80
+         - 443:443
