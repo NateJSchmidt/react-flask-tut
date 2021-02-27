@@ -8,6 +8,12 @@ fi
 
 mkdir -p bundle/images
 
+# generate the ssl certificates for TLS
+pushd certs
+   rm -f *.pem
+   ./generate_certs.sh
+popd
+
 # build the nginx server image
 docker image build -t nginx_server:local -f nginx/Dockerfile .
 docker save nginx_server:local -o ./bundle/images/nginx_server.tar
